@@ -20,6 +20,7 @@ lunation is a python library for lunar and solar information
 The library can also be used to calculate distance from the sun
 <br>
 <h1> Solar Usage: </h1>
+
 ```python
 
     
@@ -28,5 +29,3 @@ The library can also be used to calculate distance from the sun
     sun = Sun()
     distance = sun.solardistance() # returns solar distance in astronomical units
 ```
-    
-    
