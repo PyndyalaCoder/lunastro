@@ -11,9 +11,9 @@ setuptools.setup(
     description='python package for lunar information',
     long_description = long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/PyndyalaCoder/pynocturnal',
+    url='https://github.com/PyndyalaCoder/lunation',
     project_urls = {
-        "Bug Tracker": "https://github.com/PyndyalaCoder/pynocturnal/issues"
+        "Bug Tracker": "https://github.com/PyndyalaCoder/lunation/issues"
     },
     license='MIT',
     packages=['lunation'],
