@@ -2,6 +2,7 @@ import datetime
 
 class myMoon:
     def __init__(self):
+        # lunar time is the amount of time it takes for the moon to finish its phases
         self.lunartime = 29.530588853
 
     def get_julian_date(self):
