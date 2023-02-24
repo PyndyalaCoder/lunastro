@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='pynocturnal',
+    name='lunarinfo',
     version='0.0.1',
     author='Siddhu Pendyala',
     author_email='elcientifico.pendyala@hotmail.com',
