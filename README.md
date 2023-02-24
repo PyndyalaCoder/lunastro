@@ -7,6 +7,9 @@ Pynocturnal is a python library for lunar information
 
 ```python
 
+    from pynocturnal.python.pynocturnal import myMoon
+    
+    
     # create instance of myMoon
     moon = myMoon()
     
