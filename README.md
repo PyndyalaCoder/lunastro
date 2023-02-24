@@ -1,5 +1,5 @@
-# lunation
-lunation is a python library for lunar and solar information
+# lunastro
+lunastro is a python library for lunar and solar information
 
 <br>
 <h1>Lunar Usage:</h1>:
