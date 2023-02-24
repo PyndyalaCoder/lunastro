@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='lunation',
-    version='0.0.3',
+    version='0.0.4',
     author='Siddhu Pendyala',
     author_email='elcientifico.pendyala@hotmail.com',
     description='python package for lunar information',
@@ -17,5 +17,5 @@ setuptools.setup(
     },
     license='MIT',
     packages=['lunation'],
-    install_requires=['requests'],
+    install_requires=['requests', 'math'],
 )
