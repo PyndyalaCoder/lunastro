@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='lunarinfo',
+    name='lunation',
     version='0.0.1',
     author='Siddhu Pendyala',
     author_email='elcientifico.pendyala@hotmail.com',
@@ -16,6 +16,6 @@ setuptools.setup(
         "Bug Tracker": "https://github.com/PyndyalaCoder/pynocturnal/issues"
     },
     license='MIT',
-    packages=['lunarinfo'],
+    packages=['lunation'],
     install_requires=['requests'],
 )
