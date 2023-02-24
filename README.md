@@ -1,5 +1,5 @@
-# pynocturnal
-Pynocturnal is a python library for lunar information
+# lunation
+lunation is a python library for lunar information
 
 <br>
 <h1>Usage:</h1>:
@@ -7,7 +7,6 @@ Pynocturnal is a python library for lunar information
 
 ```python
 
-    from pynocturnal.python.pynocturnal import myMoon
     
     
     # create instance of myMoon
