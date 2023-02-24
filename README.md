@@ -8,7 +8,7 @@ lunation is a python library for lunar information
 ```python
 
     
-    
+    from lunation.main import myMoon
     # create instance of myMoon
     moon = myMoon()
     
