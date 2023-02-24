@@ -15,7 +15,7 @@ lunastro is a python library for lunar and solar information
     # functions
     phase = moon.get_lunar_phase() # returns lunar phase
     age = moon.get_lunar_age() # returns lunar age
-    percent = moon.get_lunar_age_percent() # returns percent of lunar age
+    percent = moon.get_lunar_age_percent() # returns percent of lunar age as a decimal
 ```
 The library can also be used to calculate distance from the sun
 <br>
