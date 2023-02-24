@@ -20,16 +20,16 @@ def get_julian_date():
         return julian_date
  
 def solardistance():
-  juliandate = get_julian_date()
-  # days since greenwich noon
-  n = juliandate - 2451545 
-  # positions
-  meanlong = 280.460 + 0.9856474 * n
-  # g is mean anomaly 
-  g = 357.528 + 0.9856003 * n
-  tmp = math.cos(g)
-  temptwo = math.cos(2*g)
-  # solar distance is in astronomical units
-  solardistance = 1.00014 - 0.01671*tmp - 0.00014*temptwo
-  return solardistance
+         juliandate = get_julian_date()
+         # days since greenwich noon
+         n = juliandate - 2451545 
+         # positions
+         meanlong = 280.460 + 0.9856474 * n
+         # g is mean anomaly 
+         g = 357.528 + 0.9856003 * n
+         tmp = math.cos(g)
+         temptwo = math.cos(2*g)
+         # solar distance is in astronomical units
+         solardistance = 1.00014 - 0.01671*tmp - 0.00014*temptwo
+         return solardistance
   
