@@ -16,6 +16,6 @@ setuptools.setup(
         "Bug Tracker": "https://github.com/PyndyalaCoder/pynocturnal/issues"
     },
     license='MIT',
-    packages=['pynocturnal'],
+    packages=['lunarinfo'],
     install_requires=['requests'],
 )
