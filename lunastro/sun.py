@@ -33,5 +33,5 @@ class Sun:
                  temptwo = math.cos(2*g)
                  # solar distance is in astronomical units
                  solardistance = 1.00014 - 0.01671*tmp - 0.00014*temptwo
-                 return solardistance * 92,955,807.3 # miles
+                 return solardistance * 92955807.3 # miles
   
