@@ -67,5 +67,6 @@ class myMoon:
 
         # in case it has just finished it's cycle
         return "new"
-
+    
+    
 
