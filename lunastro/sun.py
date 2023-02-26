@@ -2,6 +2,22 @@ import math
 import datetime
 # start by calculating julian date
 class Sun:
+        def __init__(self):
+
+
+                self.dayMs = 1000 * 60 * 60 * 24
+                self.J1970 = 2440588
+                self.J2000 = 2451545
+
+        def toJulian(self, date):
+            return date.timestamp() / self.dayMs - 0.5 + self.J1970
+
+        def fromJulian(self, j):
+            return datetime.datetime.fromtimestamp((j + 0.5 - self.J1970) * self.dayMs)
+
+        def toDays(self, date):
+            return self.toJulian(date) - self.J2000
+
         def get_julian_date(self):
                 date = None
                 # If no date is provided, use the current date and time
@@ -57,18 +73,20 @@ class Sun:
         def siderealtime(self, days, longtitudewest):
                 return math.pi/180 * (280.16 + 360.9856235 * days) - longtitudewest
         
-        def rightascension(self, l, b):
-                e = (math.pi/180) * 23.4397
-                return math.atan(math.sin(l) * math.cos(e) - math.tan(b) * math.sin(e), math.cos(l))
+        def rightAscension(self,l, b):
+                e = math.pi/180 * 23.4397
+                return math.atan2(math.sin(l) * math.cos(e) - math.tan(b) * math.sin(e), math.cos(l))
+
                 
         def azimuth(self, h, phi, declination):
-                return math.atan(math.sin(h), math.cos(h) * math.sin(phi) - math.tan(declination) * math.cos(phi))
+                return math.atan2(math.sin(h), math.cos(h) * math.sin(phi) - math.tan(declination) * math.cos(phi))
         
         def sunazimuth(self, date, latitude, longtitude):
                 lw = math.pi/180 * - longtitude
                 phi = math.pi/180 * latitude
+                d = self.toDays(date)
                 tmp = self.currentdeclination(date)
-                h = self.siderealtime(date, lw) - tmp
+                h = self.siderealtime(d, lw) - tmp
                 return self.azimuth(h, phi, tmp)
         
                 
