@@ -25,7 +25,7 @@ To install lunastro:
     hourangle() # returns solar hour angle (approximate)
 ```
 
-Astronomical Measurement:
+<h1>Astronomical Measurement:</h1>
 ```python
     lightyeardist_to_miles(lightyears)
     miles_to_lightyeardist(miles)
