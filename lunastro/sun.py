@@ -35,3 +35,42 @@ class Sun:
                  solardistance = 1.00014 - 0.01671*tmp - 0.00014*temptwo
                  return solardistance * 92955807.3 # miles
   
+        def declination(self, l, b):
+                e = (math.pi/180) * 23.4397
+                return math.asin(math.sin(b) * math.cos(e) + math.cos(b) * math.sin(e) * math.sin(l))
+        
+        def solarmeananomaly(self, d):
+                return math.pi/180 * (357.5291 + 0.98560028 * d)
+        
+        def eclipticlongtitude(self, anomaly):
+                tmp = math.pi/180 * (1.9148 * math.sin(anomaly) + 0.02 * math.sin(2 * anomaly) + 0.0003 * math.sin(3 * anomaly))
+                sectemp = math.pi/180 * 102.9372
+                return tmp + sectemp + math.pi
+        
+        
+                
+        def currentdeclination(self, d):
+                s = self.solarmeananomaly(d)
+                longtitude = self.eclipticlongtitude(s)
+                return self.declination(longtitude, 0)
+        
+        def siderealtime(self, days, longtitudewest):
+                return math.pi/180 * (280.16 + 360.9856235 * days) - longtitudewest
+        
+        def rightascension(self, l, b):
+                e = (math.pi/180) * 23.4397
+                return math.atan(math.sin(l) * math.cos(e) - math.tan(b) * math.sin(e), math.cos(l))
+                
+        def azimuth(self, h, phi, declination):
+                return math.atan(math.sin(h), math.cos(h) * math.sin(phi) - math.tan(declination) * math.cos(phi))
+        
+        def sunazimuth(self, date, latitude, longtitude):
+                lw = math.pi/180 * - longtitude
+                phi = math.pi/180 * latitude
+                tmp = self.currentdeclination(date)
+                h = self.siderealtime(date, lw) - tmp
+                return self.azimuth(h, phi, tmp)
+        
+                
+                
+                
