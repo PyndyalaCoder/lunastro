@@ -1,7 +1,25 @@
 # lunastro
 lunastro is a python library for lunar and solar information
 
+
+Installation:
+
+To install lunastro:
+
+```python
+    pip install lunastro
+```
 <br>
+
+<h1>Functions</h1>
+
+```python
+    get_lunar_phase() # returns phase
+    get_lunar_age() # returns age of moon
+    get_lunar_age_percentage() # returns age percentage of moon
+    solardistance() # returns distance to the sun in miles
+```
+
 <h1>Lunar Usage:</h1>:
 <br>
 
