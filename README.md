@@ -22,6 +22,7 @@ To install lunastro:
     eclipticlongtitude(anomaly) # ecliptic longtitude
     rightAscension(galactic_latitude, galactic_longtitude) # right Ascension
     azimuth(hour_angle, latitude, declination) # azimuth
+    hourangle() # returns solar hour angle (approximate)
 ```
 
 <h1>Lunar Usage:</h1>:
