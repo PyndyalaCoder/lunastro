@@ -76,7 +76,13 @@ class Sun:
 
 
 
-        
+    def hourangle(self):
+        # it is approximate (doesn't take into account minutes)
+        if datetime.datetime.now().hour > 12:
+            return 15 * (datetime.datetime.now().hour - 12)
+        else:
+            return 15 * (-(datetime.datetime.now().hour) + 12)
+            
                 
                 
                 
