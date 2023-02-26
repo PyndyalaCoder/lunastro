@@ -18,7 +18,7 @@ To install lunastro:
     get_lunar_age() # returns age of moon
     get_lunar_age_percentage() # returns age percentage of moon
     solardistance() # returns distance to the sun in miles
-    sunazimuth(date, latitude, longtitude)
+    sunazimuth(date, latitude, longtitude) # returns the azumith of the sun in radians (measured from south to west)
     
 ```
 
