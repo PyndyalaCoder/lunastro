@@ -25,6 +25,15 @@ To install lunastro:
     hourangle() # returns solar hour angle (approximate)
 ```
 
+Astronomical Measurement:
+```python
+    lightyeardist_to_miles(lightyears)
+    miles_to_lightyeardist(miles)
+    miles_to_au(miles)
+    au_to_miles(au)
+    parsec_to_miles(parsec)
+    miles_to_parsec(miles)
+```
 <h1>Lunar Usage:</h1>:
 <br>
 
