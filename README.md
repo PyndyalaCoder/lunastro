@@ -18,11 +18,14 @@ To install lunastro:
     get_lunar_age() # returns age of moon
     get_lunar_age_percentage() # returns age percentage of moon
     solardistance() # returns distance to the sun in miles
-    declination(galactic_latitude, galactic_longtitude) # solar declination
-    eclipticlongtitude(anomaly) # ecliptic longtitude
-    rightAscension(galactic_latitude, galactic_longtitude) # right Ascension
+    declination(galactic_latitude, galactic_longitude) # solar declination
+    eclipticlongtitude(anomaly) # ecliptic longitude
+    rightAscension(galactic_latitude, galactic_longitude) # right Ascension
     azimuth(hour_angle, latitude, declination) # azimuth
     hourangle() # returns solar hour angle (approximate)
+    mean_solar_time(longitude) # returns mean solar time
+    solar_mean_anomaly(longitude) # returns anomaly
+    center_equation(longitude) # returns center
 ```
 
 <h1>Astronomical Measurement:</h1>
