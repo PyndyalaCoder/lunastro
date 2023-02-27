@@ -59,7 +59,7 @@ class Sun:
 
 
 
-    def eclipticlongtitude(self, anomaly):
+    def eclipticlongitude(self, anomaly):
         tmp = math.pi / 180 * (
         1.9148 * math.sin(anomaly) + 0.02 * math.sin(2 * anomaly) + 0.0003 * math.sin(3 * anomaly))
         sectemp = math.pi / 180 * 102.9372
@@ -83,6 +83,19 @@ class Sun:
         else:
             return 15 * (-(datetime.datetime.now().hour) + 12)
             
-                
-                
-                
+    def mean_solar_time(longitude):
+        solartime = self.get_julian_date() - longitude/360
+        return solartime # returns in approximate mean solar time
+   
+    def solar_mean_anomaly(longitude):
+        solartime = self.mean_solar_time(longitude)
+        anomaly = (357.5291 + 0.98560028 * solartime)%360
+        return anomaly
+    
+    def center_equation(longitude):
+        m = self.solar_mean_anomaly(longitude)
+        c = 1.9148*math.sin(m) + 0.02 * math.sin(2 * m) + 0.0003*math.sin(3*m)
+    
+   
+        
+        
