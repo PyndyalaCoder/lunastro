@@ -61,6 +61,6 @@ The library can also be used to calculate distance from the sun
     from lunation.sun import Sun
     # instance of Sun
     sun = Sun()
-    distance = sun.solardistance() # returns solar distance in miles
+    distance = sun.solardistance() # returns solar distance in miles from the sun
 ```
 
