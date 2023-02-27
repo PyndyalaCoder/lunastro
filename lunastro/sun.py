@@ -95,7 +95,7 @@ class Sun:
     def center_equation(longitude):
         m = self.solar_mean_anomaly(longitude)
         c = 1.9148*math.sin(m) + 0.02 * math.sin(2 * m) + 0.0003*math.sin(3*m)
-    
+        return c
    
         
         
