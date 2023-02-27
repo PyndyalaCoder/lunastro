@@ -28,12 +28,12 @@
 <h1>Astronomical Measurement:</h1>
 
 ```python
-    lightyeardist_to_miles(lightyears)
-    miles_to_lightyeardist(miles)
-    miles_to_au(miles)
-    au_to_miles(au)
-    parsec_to_miles(parsec)
-    miles_to_parsec(miles)
+    lightyeardist_to_miles(lightyears) # returns miles 
+    miles_to_lightyeardist(miles) # returns lightyeardistance
+    miles_to_au(miles) # returns astronomical units
+    au_to_miles(au) # returns miles from astronomical units
+    parsec_to_miles(parsec) # returns miles from parsec (3.26 light years is a parsec)
+    miles_to_parsec(miles) # returns parsecs from miles 
 ```
 
 <h1>Lunar Usage:</h1>:
