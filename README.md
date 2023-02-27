@@ -1,10 +1,7 @@
 # lunastro
-lunastro is a python library for lunar and solar information
+<strong>lunastro</strong> is a python library for <i>lunar</i> and <i>solar</i> information. It provides <strong>astronomers, data experts, and python developers</strong> with a quick, easy, and accurate approach to get information on <strong>celestial bodies</strong>.
 
-
-Installation:
-
-To install lunastro:
+<h1>To install lunastro:</h1>
 
 ```python
     pip install lunastro
@@ -66,3 +63,4 @@ The library can also be used to calculate distance from the sun
     sun = Sun()
     distance = sun.solardistance() # returns solar distance in miles
 ```
+
