@@ -97,7 +97,7 @@ class Sun:
         c = 1.9148*math.sin(m) + 0.02 * math.sin(2 * m) + 0.0003*math.sin(3*m)
         return c
     
-    def calculate_sunrise(self, latitude, longitude, date):
+    def calc_sunrise(self, latitude, longitude, date):
         N = date.timetuple().tm_yday
         time_offset = (longitude / 15.0)
         solar_time = datetime.datetime.combine(date, datetime.time(12)) - datetime.timedelta(hours=time_offset)
