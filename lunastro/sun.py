@@ -58,7 +58,11 @@ class Sun:
         return math.asin(math.sin(b) * math.cos(e) + math.cos(b) * math.sin(e) * math.sin(l))
 
 
-
+    def observerAngle(self, height):
+        return -2.076 * math.sqrt(height) / 60
+    
+    
+    
     def eclipticlongitude(self, anomaly):
         tmp = math.pi / 180 * (
         1.9148 * math.sin(anomaly) + 0.02 * math.sin(2 * anomaly) + 0.0003 * math.sin(3 * anomaly))
