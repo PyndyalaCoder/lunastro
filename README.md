@@ -23,7 +23,6 @@
     mean_solar_time(longitude) # returns mean solar time
     solar_mean_anomaly(longitude) # returns anomaly
     center_equation(longitude) # returns center
-    calculate_sunrise(latitude, longitude, date) # returns sunrise time (doesn't take into account DST)
 ```
 
 <h1>Astronomical Measurement:</h1>
