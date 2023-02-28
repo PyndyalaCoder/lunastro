@@ -98,19 +98,10 @@ class Sun:
         return c
     
     def calculate_sunrise(self, latitude, longitude, date):
-
-
-        # Calculate the number of days since January 1st of the current year
         N = date.timetuple().tm_yday
-
-        # Calculate the local apparent solar time
         time_offset = (longitude / 15.0)
         solar_time = datetime.datetime.combine(date, datetime.time(12)) - datetime.timedelta(hours=time_offset)
-
-        # Calculate the hour angle at sunrise
         hour_angle = math.degrees(math.acos((math.sin(math.radians(-0.83)) - math.sin(math.radians(latitude)) * math.sin(math.radians(23.44))) / (math.cos(math.radians(latitude)) * math.cos(math.radians(23.44))))
-
-        # Calculate the time of sunrise
         sunrise = solar_time + datetime.timedelta(minutes=hour_angle * 4)
 
         return sunrise
