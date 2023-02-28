@@ -68,5 +68,25 @@ class myMoon:
         # in case it has just finished it's cycle
         return "new"
     
+    def get_lunar_phase_description(self):
+        age = self.get_lunar_age()
+        if age < 1.84566:
+            return "new moon: the marking of the new beginning of the lunar cycle. The new moon shows up around once a month (every 29.5 days). During this time, the moon is in line with the sun, causing its illumination to be around 0%."
+        elif age < 5.53699:
+            return "waxing crescent: the second phase in the cycle of phases. This Moon phase occurs once a month, rising around 9 AM, and setting around 9 PM, sticking around for approximately 7.38 days before going into the First Quarter phase. "
+        elif age < 9.22831:
+            return "first quarter: rises around noon and sets around midnight. It’s high in the sky in the evening and makes for excellent viewing."
+        elif age < 12.91963:
+            return "waxing gibbous: when the lit-up part of the Moon grows from 50.1% to 99.9%. It starts just after the First Quarter Moon and lasts until the Full Moon."
+        elif age < 16.61096:
+            return "full: when the Sun and the Moon are aligned on opposite sides of Earth, and 100% of the Moon's face is illuminated by the Sun"
+        elif age < 20.30228:
+            return 'waning gibbous: when the lit-up part of the Moon shrinks from 99.9% to 50.1%. It starts just after Full Moon and lasts until the Third Quarter Moon.'
+        elif age < 23.99361:
+            return "third quarter: the seventh phase in the cycle of phases. This Moon phase occurs once a month, rising around 12 AM, and setting around 12 PM, almost instantaneously becoming a Waning Crescent."
+        elif age < 27.68493:
+            return "waning crescent: the eighth and final phase in the cycle of phases. This Moon phase occurs once a month, rising around 3 AM, and setting around 3 PM, sticking around for approximately 7.38 days before going into the New Moon phase."
+        
+        return "new moon: the marking of the new beginning of the lunar cycle. The new moon shows up around once a month (every 29.5 days). During this time, the moon is in line with the sun, causing its illumination to be around 0%."
     
 
