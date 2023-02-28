@@ -44,6 +44,12 @@
     au_to_miles(au) # returns miles from astronomical units
     parsec_to_miles(parsec) # returns miles from parsec (3.26 light years is a parsec)
     miles_to_parsec(miles) # returns parsecs from miles 
+    kilometers_to_au(self, kilometers, rounded) # if rounded is set to true, it rounds value, else ,it returns au from kilometers
+    au_to_kilometers(self, au) # returns kilometers from au
+    kilometers_to_parsec(self, kilometers) # returns parsec from kilometers
+    parsec_to_kilometers(self, parsecs) # returns kilometers from parsecs
+    kilometers_to_lightyeardist(self, kilometers) # returns lightyear dist from kilometers
+    lightyeardist_to_kilometers(self, lightyears) # returns kilometers from lightyears
 ```
 
 
