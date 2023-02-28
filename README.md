@@ -8,12 +8,21 @@
 ```
 <br>
 
-<h1>Functions</h1>
+<h1>Functions and their output</h1>
 
 ```python
-    get_lunar_phase() # returns phase
+    """ 
+    Lunar functions
+    """
+    
+    
+    get_lunar_phase() # returns the current lunar phase as words
     get_lunar_age() # returns age of moon
     get_lunar_age_percentage() # returns age percentage of moon
+    
+    """
+    Solar Functions
+    """
     solardistance() # returns distance to the sun in miles
     declination(galactic_latitude, galactic_longitude) # solar declination
     eclipticlongtitude(anomaly) # ecliptic longitude
@@ -25,7 +34,7 @@
     center_equation(longitude) # returns center
 ```
 
-<h1>Astronomical Measurement:</h1>
+<h1>Astronomical Measurement Functions:</h1>
 
 ```python
     lightyeardist_to_miles(lightyears) # returns miles 
@@ -36,31 +45,5 @@
     miles_to_parsec(miles) # returns parsecs from miles 
 ```
 
-<h1>Lunar Usage:</h1>:
-<br>
 
-```python
-
-    
-    from lunation.main import myMoon
-    # create instance of myMoon
-    moon = myMoon()
-    
-    # functions
-    phase = moon.get_lunar_phase() # returns lunar phase
-    age = moon.get_lunar_age() # returns lunar age
-    percent = moon.get_lunar_age_percent() # returns percent of lunar age as a decimal
-```
-The library can also be used to calculate distance from the sun
-<br>
-<h1> Solar Usage: </h1>
-
-```python
-
-    
-    from lunation.sun import Sun
-    # instance of Sun
-    sun = Sun() # sun object
-    distance = sun.solardistance() # returns solar distance in miles from the sun
-```
 
