@@ -97,18 +97,8 @@ class Sun:
         c = 1.9148*math.sin(m) + 0.02 * math.sin(2 * m) + 0.0003*math.sin(3*m)
         return c
     
-   def calculate_sunrise(self, latitude, longitude, date):
-        """
-        Calculates the time of sunrise for a given latitude, longitude, and date.
+    def calculate_sunrise(self, latitude, longitude, date):
 
-        Arguments:
-        latitude -- the latitude of the location (in decimal degrees)
-        longitude -- the longitude of the location (in decimal degrees)
-        date -- the date for which to calculate sunrise (as a datetime object)
-
-        Returns:
-        A datetime object representing the time of sunrise on the given date at the given location.
-        """
 
         # Calculate the number of days since January 1st of the current year
         N = date.timetuple().tm_yday
