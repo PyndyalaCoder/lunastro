@@ -83,19 +83,49 @@ class Sun:
         else:
             return 15 * (-(datetime.datetime.now().hour) + 12)
             
-    def mean_solar_time(longitude):
+    def mean_solar_time(self, longitude):
         solartime = self.get_julian_date() - longitude/360
         return solartime # returns in approximate mean solar time
    
-    def solar_mean_anomaly(longitude):
+    def solar_mean_anomaly(self, longitude):
         solartime = self.mean_solar_time(longitude)
         anomaly = (357.5291 + 0.98560028 * solartime)%360
         return anomaly
     
-    def center_equation(longitude):
+    def center_equation(self, longitude):
         m = self.solar_mean_anomaly(longitude)
         c = 1.9148*math.sin(m) + 0.02 * math.sin(2 * m) + 0.0003*math.sin(3*m)
         return c
-   
+    
+   def calculate_sunrise(self, latitude, longitude, date):
+        """
+        Calculates the time of sunrise for a given latitude, longitude, and date.
+
+        Arguments:
+        latitude -- the latitude of the location (in decimal degrees)
+        longitude -- the longitude of the location (in decimal degrees)
+        date -- the date for which to calculate sunrise (as a datetime object)
+
+        Returns:
+        A datetime object representing the time of sunrise on the given date at the given location.
+        """
+
+        # Calculate the number of days since January 1st of the current year
+        N = date.timetuple().tm_yday
+
+        # Calculate the local apparent solar time
+        time_offset = (longitude / 15.0)
+        solar_time = datetime.datetime.combine(date, datetime.time(12)) - datetime.timedelta(hours=time_offset)
+
+        # Calculate the hour angle at sunrise
+        hour_angle = math.degrees(math.acos((math.sin(math.radians(-0.83)) - math.sin(math.radians(latitude)) * math.sin(math.radians(23.44))) / (math.cos(math.radians(latitude)) * math.cos(math.radians(23.44))))
+
+        # Calculate the time of sunrise
+        sunrise = solar_time + datetime.timedelta(minutes=hour_angle * 4)
+
+        return sunrise
+
+
+
         
         
