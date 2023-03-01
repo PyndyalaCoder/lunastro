@@ -1,3 +1,4 @@
+import math
 import datetime
 
 class myMoon:
@@ -131,4 +132,74 @@ class myMoon:
             az += 360
 
         return alt, az
+    
+    import math
+import datetime
+
+def moonrise_set(lat, lon, date):
+    # Set the altitude threshold for moonrise and moonset to 0.0 degrees
+    alt_threshold = 0.0
+
+    # Calculate the moon's altitude at the observer's location and date/time
+    moon_alt, _ = self.moon_alt_az(lat, lon, date)
+
+    # Calculate the moon's altitude one hour later
+    next_date = date + datetime.timedelta(hours=1)
+    next_moon_alt, _ = self.moon_alt_az(lat, lon, next_date)
+
+    # Check if the moon is rising or setting
+    if moon_alt < alt_threshold and next_moon_alt >= alt_threshold:
+        # Moon is rising
+        return self.calculate_moon_event_time(lat, lon, date, next_date, alt_threshold, True)
+    elif moon_alt >= alt_threshold and next_moon_alt < alt_threshold:
+        # Moon is setting
+        return self.calculate_moon_event_time(lat, lon, date, next_date, alt_threshold, False)
+    else:
+        # Moon is not rising or setting
+        return None, None
+
+def calculate_moon_event_time(lat, lon, start_date, end_date, alt_threshold, is_rising):
+    # Use binary search to find the moonrise/moonset time
+    max_iterations = 20
+    iteration_count = 0
+
+    # Set the start and end times for the binary search
+    start_time = start_date
+    end_time = end_date
+
+    # Keep track of the last altitude and time
+    last_alt = None
+    last_time = None
+
+    while iteration_count < max_iterations:
+        # Calculate the midpoint time between the start and end times
+        mid_time = start_time + (end_time - start_time) / 2
+
+        # Calculate the moon's altitude at the midpoint time
+        moon_alt, _ = self.moon_alt_az(lat, lon, mid_time)
+
+        # Check if the moon is rising or setting at the midpoint time
+        if moon_alt >= alt_threshold and is_rising:
+            end_time = mid_time
+        elif moon_alt < alt_threshold and is_rising:
+            start_time = mid_time
+        elif moon_alt < alt_threshold and not is_rising:
+            end_time = mid_time
+        elif moon_alt >= alt_threshold and not is_rising:
+            start_time = mid_time
+
+        # Check if the moonrise/moonset time has been found
+        if last_alt is not None and last_time is not None:
+            if (last_alt < alt_threshold and moon_alt >= alt_threshold) or (last_alt >= alt_threshold and moon_alt < alt_threshold):
+                return last_time, mid_time
+
+        # Update the last altitude and time
+        last_alt = moon_alt
+        last_time = mid_time
+
+        # Increment the iteration count
+        iteration_count += 1
+
+    # Moonrise/moonset time could not be found
+    return None, None
 
