@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='lunastro',
-    version='0.0.10',
+    version='0.0.11',
     author='Siddhu Pendyala',
     author_email='elcientifico.pendyala@hotmail.com',
     description='python package for lunar and solar information',
