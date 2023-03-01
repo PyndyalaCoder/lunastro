@@ -33,7 +33,13 @@
     mean_solar_time(longitude) # returns mean solar time
     solar_mean_anomaly(longitude) # returns anomaly
     center_equation(longitude) # returns center
+    
+    """
+    Constellation Function
+    """
+    getViewableConstellations(latitude) # calculates the constellations that you can see (out of the 88 internationally recognized ones) based on latitude. Doesn't take into account other factors such as height or obstructions to the sky.
 ```
+
 
 <h1>Astronomical Measurement Functions:</h1>
 
