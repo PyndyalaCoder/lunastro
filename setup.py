@@ -17,5 +17,5 @@ setuptools.setup(
     },
     license='MIT',
     packages=['lunastro'],
-    install_requires=['requests'],
+    install_requires=['requests','pytz'],
 )
