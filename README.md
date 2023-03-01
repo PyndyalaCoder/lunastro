@@ -26,7 +26,7 @@
     Solar Functions
     """
     solardistance() # returns distance to the sun in miles
-    declination(galactic_latitude, galactic_longitude) # solar declination
+    solar_declination() # solar declination
     eclipticlongtitude(anomaly) # ecliptic longitude
     rightAscension(galactic_latitude, galactic_longitude) # right Ascension
     azimuth(hour_angle, latitude, declination) # azimuth
