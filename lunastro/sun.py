@@ -101,7 +101,7 @@ class Sun:
         c = 1.9148*math.sin(m) + 0.02 * math.sin(2 * m) + 0.0003*math.sin(3*m)
         return c
     
-    def moon_alt_az(lat, lon, date):
+    def moon_alt_az(self, lat, lon, date):
         # Convert latitude and longitude to radians
         lat = math.radians(lat)
         lon = math.radians(lon)
