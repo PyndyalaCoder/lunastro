@@ -58,6 +58,8 @@
     lightyeardist_to_kilometers(self, lightyears) # returns kilometers from lightyears
 ```
 
+<h1>Usage:</h1>
+<br>
 
 To use your functions, make sure to declare an instance of the class:
 
