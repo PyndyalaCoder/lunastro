@@ -53,9 +53,12 @@ class Sun:
         solardistance = 1.00014 - 0.01671 * tmp - 0.00014 * temptwo
         return solardistance * 92955807.3  # miles
 
-    def declination(self, l, b):
-        e = (math.pi / 180) * 23.4397
-        return math.asin(math.sin(b) * math.cos(e) + math.cos(b) * math.sin(e) * math.sin(l))
+    def solar_declination(self):
+        # Get the current date (in UTC)
+        now = datetime.datetime.utcnow()
+        day_of_year = now.timetuple().tm_yday
+        solar_declination = -23.45 * math.cos(math.radians((360 / 365) * (day_of_year + 10)))
+        return solar_declination
 
 
     def observerAngle(self, height):
