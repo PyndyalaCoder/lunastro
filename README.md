@@ -59,4 +59,21 @@
 ```
 
 
+To use your functions, make sure to declare an instance of the class:
 
+```python
+    # if desiring sun information
+    from lunastro import Sun
+    sun = Sun()
+    
+    # if desiring moon information
+    from lunastro import myMoon
+    moon = myMoon()
+    
+    # if desiring astronomical conversions
+    from lunastro import Measurement
+    measure = Measurement()
+    
+    # if desiring constellation information
+    from lunastro import Stellar
+    stars = Stellar()
