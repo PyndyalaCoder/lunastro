@@ -104,48 +104,8 @@ class Sun:
         c = 1.9148*math.sin(m) + 0.02 * math.sin(2 * m) + 0.0003*math.sin(3*m)
         return c
     
-    def moon_alt_az(self, lat, lon, date):
-        # Convert latitude and longitude to radians
-        lat = math.radians(lat)
-        lon = math.radians(lon)
-
-        # Calculate the Julian date
-        J2000 = 2451545
-        J = date.timestamp() / 86400 + 2440587.5 - J2000
-
-        # Calculate the moon's position in radians
-        N = math.radians((125.1228 - 0.0529538083 * J) % 360)
-        i = math.radians(5.1454)
-        w = math.radians((318.0634 + 0.1643573223 * J) % 360)
-        a = 60.2666
-        e = 0.054900
-        M = math.radians((115.3654 + 13.0649929509 * J) % 360)
-        E = M + e * math.sin(M) * (1.0 + e * math.cos(M))
-        xv = a * (math.cos(E) - e)
-        yv = a * (math.sqrt(1.0 - e * e) * math.sin(E))
-        v = math.atan2(yv, xv)
-        r = math.sqrt(xv * xv + yv * yv)
-        xh = r * (math.cos(N) * math.cos(v + w) - math.sin(N) * math.sin(v + w) * math.cos(i))
-        yh = r * (math.sin(N) * math.cos(v + w) + math.cos(N) * math.sin(v + w) * math.cos(i))
-        zh = r * (math.sin(v + w) * math.sin(i))
-
-        # Calculate the Greenwich sidereal time
-        JD = date.timestamp() / 86400 + 2440587.5
-        T = (JD - 2451545.0) / 36525
-        L0 = math.radians(280.4665 + 36000.7698 * T)
-        dL = math.radians(218.3165 + 481267.8813 * T)
-        GMST0 = L0 + dL
-        SIDTIME = GMST0 + lon
-
-        # Calculate the moon's altitude and azimuth
-        HA = SIDTIME - math.degrees(math.atan2(yh, xh))
-        alt = math.asin(zh / r)
-        az = math.degrees(
-            math.atan2(math.sin(HA), math.cos(HA) * math.sin(lat) - math.tan(math.asin(zh / r)) * math.cos(lat)))
-        if az < 0:
-            az += 360
-
-        return alt, az
+    def altitude(self, latitude, declination):
+        return 90 - (latitude + declination) # returns in degrees
 
 
 
