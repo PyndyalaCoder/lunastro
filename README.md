@@ -34,6 +34,7 @@
     mean_solar_time(longitude) # returns mean solar time
     solar_mean_anomaly(longitude) # returns anomaly
     center_equation(longitude) # returns center
+    altitude(latitude, declination) # returns angle from horizon to the center of the sun disk in degrees
     
     """
     Constellation Function
