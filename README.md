@@ -29,7 +29,7 @@
     solar_declination() # solar declination
     eclipticlongtitude(anomaly) # ecliptic longitude
     rightAscension(galactic_latitude, galactic_longitude) # right Ascension
-    azimuth(hour_angle, latitude, declination) # azimuth
+    sun_azimuth(latitude, longitude) # returns azimuth of the sun as a compass direction (N, S, W, E, NW, NE, SW, SE, NNW, NNE, etc.)
     hourangle() # returns solar hour angle (approximate)
     mean_solar_time(longitude) # returns mean solar time
     solar_mean_anomaly(longitude) # returns anomaly
