@@ -1,5 +1,6 @@
 import math
 import datetime
+import pytz
 
 
 # start by calculating julian date
@@ -106,6 +107,76 @@ class Sun:
     
     def altitude(self, latitude, declination):
         return 90 - (latitude + declination) # returns in degrees
+    
+
+    def sun_azimuth(lat, lon):
+        # Get the current date and time in the observer's time zone
+        now = datetime.datetime.now(pytz.timezone('US/Pacific'))
+
+        # Convert the observer's latitude and longitude to radians
+        lat = math.radians(lat)
+        lon = math.radians(lon)
+
+        # Calculate the observer's local sidereal time
+        gst = now.astimezone(pytz.utc).strftime('%H:%M:%S')
+        lst = (datetime.datetime.strptime(gst, '%H:%M:%S') + datetime.timedelta(hours=lon / math.pi * 12)).time()
+
+        # Calculate the Sun's right ascension and declination for the current date and time
+        d = now.date()
+        n = (datetime.datetime(d.year, d.month, d.day, tzinfo=pytz.utc) - datetime.datetime(2000, 1, 1, 12,
+                                                                                            tzinfo=pytz.utc)).days + 1
+        g = 357.529 + 0.98560028 * n
+        g = math.radians(g % 360)
+        dec = math.asin(0.39779 * math.sin(g))
+        ra = math.atan2(math.cos(g), 0.91746 * math.tan(dec))
+        if ra < 0:
+            ra += 2 * math.pi
+
+        # Calculate the Sun's hour angle
+        ha = math.radians((lst.hour + lst.minute / 60 + lst.second / 3600) * 15 - math.degrees(ra))
+
+        # Calculate the Sun's azimuth using the formula
+        sin_az = math.sin(ha) / (math.cos(lat) * math.tan(dec) - math.sin(lat) * math.cos(ha))
+        cos_az = (math.sin(lat) * math.sin(dec) + math.cos(lat) * math.cos(dec) * math.cos(ha))
+        azimuth = math.degrees(math.atan2(sin_az, cos_az))
+
+        # Convert the azimuth to a compass direction
+        if azimuth < 0:
+            azimuth += 360
+        if azimuth > 360:
+            azimuth -= 360
+        if azimuth < 11.25 or azimuth >= 348.75:
+            return 'N'
+        elif azimuth < 33.75:
+            return 'NNE'
+        elif azimuth < 56.25:
+            return 'NE'
+        elif azimuth < 78.75:
+            return 'ENE'
+        elif azimuth < 101.25:
+            return 'E'
+        elif azimuth < 123.75:
+            return 'ESE'
+        elif azimuth < 146.25:
+            return 'SE'
+        elif azimuth < 168.75:
+            return 'SSE'
+        elif azimuth < 191.25:
+            return 'S'
+        elif azimuth < 213.75:
+            return 'SSW'
+        elif azimuth < 236.25:
+            return 'SW'
+        elif azimuth < 258.75:
+            return 'WSW'
+        elif azimuth < 281.25:
+            return 'W'
+        elif azimuth < 303.75:
+            return 'WNW'
+        elif azimuth < 326.25:
+            return 'NW'
+        else:
+            return 'NNW'
 
 
 
