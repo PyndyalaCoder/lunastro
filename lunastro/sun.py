@@ -81,7 +81,74 @@ class Sun:
 
     def azimuth(self, h, phi, declination):
         return math.atan2(math.sin(h), math.cos(h) * math.sin(phi) - math.tan(declination) * math.cos(phi))
+    
+    def astro_info(self, year, month, day, hour, minute, second, lat, lon):
+        # Convert latitude and longitude to radians
+        lat_rad = math.radians(lat)
+        lon_rad = math.radians(lon)
+        ltr = []
+        # Calculate the Julian Day (JD) for the given date and time
+        jd = 367 * year - 7 * (year + (month + 9) // 12) // 4 + 275 * month // 9 + day + 1721013.5
+        jd += (hour + minute / 60 + second / 3600) / 24
+        ltr.append(jd)
+        # jd, jc, geometric mean longitude, geometric mean anomaly, eccentricity of earth's orbit, equation of center, true longitude, true anomaly, sun's distance from earth (AU), longitude of omega, mean obliquity of ecliptic, sun's right ascension, sun's declination ,local hour angle.
 
+        # Calculate the Julian Century (JC) for the given JD
+        jc = (jd - 2451545) / 36525
+        ltr.append(jc)
+
+        # Calculate the Geometric Mean Longitude of the Sun (L0) in degrees
+        l0 = 280.46646 + jc * (36000.76983 + jc * 0.0003032) % 360
+        ltr.append(l0)
+
+        # Calculate the Geometric Mean Anomaly of the Sun (M) in degrees
+        m = 357.52911 + jc * (35999.05029 - 0.0001537 * jc)
+        ltr.append(m)
+
+        # Calculate the Eccentricity of Earth's Orbit (e)
+        e = 0.016708634 - jc * (0.000042037 + 0.0000001267 * jc)
+        ltr.append(e)
+
+        # Calculate the Equation of Center (C) in degrees
+        c = math.sin(math.radians(m)) * (1.914602 - jc * (0.004817 + 0.000014 * jc)) + math.sin(math.radians(2 * m)) * (0.019993 - 0.000101 * jc) + math.sin(math.radians(3 * m)) * 0.000289
+        ltr.append(c)
+        
+        # Calculate the True Longitude of the Sun (l) in degrees
+        l = l0 + c
+        ltr.append(l)
+        
+        # Calculate the True Anomaly of the Sun (v) in degrees
+        v = m + c
+        ltr.append(v)
+        
+        # Calculate the Sun's Distance from Earth (r) in Astronomical Units (AU)
+        r = 1.000001018 * (1 - e * e) / (1 + e * math.cos(math.radians(v)))
+        ltr.append(r)
+
+        # Calculate the Longitude of the Sun's Ascending Node (Omega) in degrees
+        omega = 125.04 - 1934.136 * jc
+        ltr.append(omega)
+
+        # Calculate the Mean Obliquity of the Ecliptic (epsilon) in degrees
+        epsilon = 23.439291 - jc * (0.0130042 + 0.00000016 * jc)
+        ltr.append(epsilon)
+
+        # Calculate the Sun's Right Ascension (alpha) in degrees
+        alpha = math.degrees(math.atan2(math.cos(math.radians(epsilon)) * math.sin(math.radians(l)), math.cos(math.radians(l))))
+
+        # Convert alpha to the range 0-360 degrees
+        alpha = (alpha + 360) % 360
+        ltr.append(alpha)
+
+        # Calculate the Sun's Declination (delta) in degrees
+        delta = math.degrees(math.asin(math.sin(math.radians(epsilon)) * math.sin(math.radians(l))))
+        ltr.append(delta)
+
+        # Calculate the Local Hour Angle (H) in degrees
+        H = math.degrees(math.acos((math.sin(math.radians(-0.83)) - math.sin(math.radians(lat_rad)) * math.sin(math.radians(delta))) / (math.cos(math.radians(lat_rad)) * math.cos(math.radians(delta)))))
+        ltr.append(H)
+        
+        return ltr
 
 
     def hourangle(self):
