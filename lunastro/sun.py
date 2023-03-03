@@ -109,7 +109,7 @@ class Sun:
         return 90 - (latitude + declination) # returns in degrees
     
 
-    def sun_azimuth(lat, lon):
+    def sun_azimuth(self, lat, lon):
         # Get the current date and time in the observer's time zone
         now = datetime.datetime.now(pytz.timezone('US/Pacific'))
 
