@@ -41,6 +41,30 @@ class myMoon:
         if value < 0:
             value = value + 1
         return value
+    
+    def moon_illumination_percent(phase):
+        
+        """
+        Calculates the illumination percent of the moon based on its phase.
+
+        Parameters:
+            phase (float): The phase of the moon, expressed as a value between 0 and 1.
+
+        Returns:
+            float: The percentage of the moon's visible surface that is illuminated, expressed as a value between 0 and 100.
+        """
+
+        # Convert phase to angle in radians
+        angle = 2 * math.pi * phase
+
+        # Calculate the fraction of the moon's visible surface that is illuminated
+        fraction = (1 + math.cos(angle)) / 2
+
+        # Convert fraction to percentage
+        percent = fraction * 100
+
+        return percent
+
 
     def get_lunar_phase(self):
         age = self.get_lunar_age()
