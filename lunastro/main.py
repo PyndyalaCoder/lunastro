@@ -42,7 +42,7 @@ class myMoon:
             value = value + 1
         return value
     
-    def moon_illumination_percent(phase):
+    def moon_illumination_percent(self, phase):
         
         """
         Calculates the illumination percent of the moon based on its phase.
