@@ -27,7 +27,7 @@
     """
     solardistance() # returns distance to the sun in miles
     astro_info(year, month, day, hour, minute, second, lat, lon) # returns list with jd, jc, geometric mean longitude, geometric mean anomaly, eccentricity of earth's orbit, equation of center, true longitude, true anomaly, sun's distance from earth (AU), longitude of omega, mean obliquity of ecliptic, sun's right ascension, sun's declination ,local hour angle.
-
+    apparent_magnitude() # returns magnitude of the sun
     solar_declination() # solar declination
     eclipticlongtitude(anomaly) # ecliptic longitude
     rightAscension(galactic_latitude, galactic_longitude) # right Ascension
