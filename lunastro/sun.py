@@ -175,6 +175,13 @@ class Sun:
     def altitude(self, latitude, declination):
         return 90 - (latitude + declination) # returns in degrees
     
+    def apparent_magnitude(self):
+        # Apparent magnitude of Sun at a distance of 1 AU
+        sun_magnitude_1au = -26.74
+        # Calculate the apparent magnitude of the Sun at the current distance
+        sun_magnitude = sun_magnitude_1au - 2.5 * math.log10(self.solardistance()/92955807.273026)
+        return sun_magnitude
+    
 
     def sun_azimuth(self, lat, lon):
         # Get the current date and time in the observer's time zone
