@@ -15,7 +15,6 @@
     Lunar functions
     """
     
-    
     get_lunar_phase() # returns the current lunar phase as words
     get_lunar_age() # returns age of moon
     get_lunar_age_percentage() # returns age percentage of moon
