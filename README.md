@@ -104,3 +104,34 @@ In order to <strong>input</strong> a value between 0 and 1 to get the lunar illu
 |       | Waxing Crescent  |
 | 0.75  | First Quarter    |
 |       | Waxing Gibbous |
+
+
+## Contributing to Lunastro
+Thank you for your interest in contributing to Lunastro! Here are a few guidelines to help you get started.
+
+## Getting Started
+- Fork the repository on GitHub.
+- Clone your forked repository to your local machine.
+- Create a new branch for your changes: git checkout -b your-branch-name.
+- Make your changes and commit them: git commit -m "Your commit message".
+- Push your changes to your forked repository: git push origin your-branch-name.
+- Create a pull request (PR) from your forked repository to the main Lunastro repository.
+
+## Code Style
+Please follow the PEP 8 style guide for Python code. If you're not sure about something, feel free to ask in your pull request or create an issue.
+
+## Testing
+All code changes should include appropriate tests to ensure that the changes work as expected and do not break existing functionality. Please make sure that all tests pass before submitting a pull request.
+
+
+## Documentation
+Please update the documentation as appropriate when making changes to the code. This includes docstrings for functions, as well as updating the README and any other relevant documentation.
+
+## Issues
+If you encounter a bug or have a feature request, please open an issue on the GitHub repository. Be as specific as possible in your description of the issue or feature request.
+
+## Review Process
+All pull requests will be reviewed by the Lunastro team. Feedback and comments will be provided, and changes may be requested before the pull request is merged.
+
+## Help
+If you have any questions about usage, please email <strong>lunastrohelp@gmail.com</strong>. Expect a 1-3 day wait before your response.
