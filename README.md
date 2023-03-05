@@ -89,7 +89,7 @@ To use your functions, make sure to declare an instance of the class:
 <br>
 
 <h1>Input of a Moon Phase:</h1>
-<br>
+
 In order to <strong>input</strong> a value between 0 and 1 to get the lunar illumination percentage, you can use the following guide:
 <br>
 | Phase | Name            |
