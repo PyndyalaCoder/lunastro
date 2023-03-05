@@ -20,7 +20,8 @@
     get_lunar_age() # returns age of moon
     get_lunar_age_percentage() # returns age percentage of moon
     get_lunar_phase_description() # returns description of the current moon phase
-    moon_alt_az(lat, lon, date)
+    moon_alt_az(lat, lon, date) # altitude and azimuth of the moon
+    moon_illumination_percent(phase) # takes special input and returns percentage of moon_illumination
     
     """
     Solar Functions
@@ -83,3 +84,21 @@ To use your functions, make sure to declare an instance of the class:
     # if desiring constellation information
     from lunastro import Stellar
     stars = Stellar()
+```
+
+<br>
+
+<h1>Input of a Moon Phase:</h1>
+<br>
+In order to <strong>input</strong> a value between 0 and 1 to get the lunar illumination percentage, you can use the following guide:
+<br>
+| Phase | Name            |
+| -----:| --------------- |
+| 0     | Full Moon        |
+|       | Waning Gibbous |
+| 0.25  | Last Quarter   |
+|       | Waning Crescent  |
+| 0.5   | New Moon       |
+|       | Waxing Crescent  |
+| 0.75  | First Quarter    |
+|       | Waxing Gibbous |
