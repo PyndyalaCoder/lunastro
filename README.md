@@ -3,8 +3,8 @@
 
 <h1>To install lunastro:</h1>
 <br>
-As of 2023, Lunastro is only available through pip.
-You can run the following command in your terminal
+As of 2023, <b>Lunastro</b> is only available through pip. <br>
+You can run the <b>following</b> command in your <i>terminal</i>
 
 ```python
     pip install lunastro
