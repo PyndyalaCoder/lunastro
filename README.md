@@ -96,13 +96,13 @@ In order to <strong>input</strong> a value between 0 and 1 to get the lunar illu
 | Phase | Name            |
 | -----:| --------------- |
 | 0     | Full Moon        |
-|       | Waning Gibbous |
+| 0.125  | Waning Gibbous |
 | 0.25  | Last Quarter   |
-|       | Waning Crescent  |
+| 0.375   | Waning Crescent  |
 | 0.5   | New Moon       |
-|       | Waxing Crescent  |
+| 0.625 | Waxing Crescent  |
 | 0.75  | First Quarter    |
-|       | Waxing Gibbous |
+| 0.875     | Waxing Gibbous |
 
 
 ## Contributing to Lunastro
