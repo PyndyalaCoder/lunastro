@@ -134,4 +134,4 @@ If you encounter a bug or have a feature request, please open an issue on the Gi
 All pull requests will be reviewed by the Lunastro team. Feedback and comments will be provided, and changes may be requested before the pull request is merged.
 
 ## Help
-If you have any questions about usage, please email <strong>lunastrohelp@gmail.com</strong>. Expect a 1-3 day wait before your response.
+If you have any questions about usage, please email <strong>lunastrohelp@gmail.com</strong>. Expect a 1-3 day wait before you receive a response.
