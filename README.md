@@ -45,7 +45,13 @@ You can run the <b>following</b> command in your <i>terminal</i>
     Constellation Function
     """
     get_viewable_constellations(latitude, height) # as of march 6th 2023, the new function calculates viewable constellations while also taking into account lat_max, lat_min of each constellation, as well as the range of constellations he/she can see based on height.
-
+    
+    """
+    Star Functions
+    """
+    calculate_apparent_brightness(absolute_brightness, distance) # apparent brightness
+    calculate_absolute_brightness(apparent_brightness, distance) # absolute brightness
+    calculate_star_distance(apparent_brightness, absolute_brightness) # distance to star in parsecs (1 parsec is 3.2 light years)
 ```
 
 <h1>Astronomical Measurement Functions:</h1>
@@ -86,6 +92,10 @@ To use your functions, make sure to declare an instance of the class:
     # if desiring constellation information
     from lunastro import Stellar
     stars = Stellar()
+    
+    # if desiring star information
+    from lunastro import Star
+    star_info = Star()
 ```
 
 <br>
