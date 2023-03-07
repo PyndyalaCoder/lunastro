@@ -44,8 +44,7 @@ You can run the <b>following</b> command in your <i>terminal</i>
     """
     Constellation Function
     """
-    getViewableConstellations(latitude) # calculates the constellations that you can see (out of the 88 internationally recognized ones) based on latitude. Doesn't take into account other factors such as height or obstructions to the sky.
-```
+    get_viewable_constellations(latitude, height) # as of march 6th 2023, the new function calculates viewable constellations while also taking into account lat_max, lat_min of each constellation, as well as the range of constellations he/she can see based on height.
 
 
 <h1>Astronomical Measurement Functions:</h1>
