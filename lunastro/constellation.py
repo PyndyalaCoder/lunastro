@@ -66,16 +66,16 @@ class Stellar:
                 'Vulpecula': {'lat_min': 0, 'lat_max': 90}
                         }
 
-                 constellations = []
-                 count = 0
-                 for name, data in constellation_data.items():
-                     # Adjust latitude range based on observer height
-                     adj_degrees = 180 / math.pi * math.asin(6371 / (6371 + height))
-                     lat_min = max(data['lat_min'] - adj_degrees, -90)
-                     lat_max = min(data['lat_max'] + adj_degrees, 90)
-                     if latitude >= lat_min and latitude <= lat_max:
-                         constellations.append(name)
-                         count += 1
-                 return constellations
+                constellations = []
+                count = 0
+                for name, data in constellation_data.items():
+                    # Adjust latitude range based on observer height
+                    adj_degrees = 180 / math.pi * math.asin(6371 / (6371 + height))
+                    lat_min = max(data['lat_min'] - adj_degrees, -90)
+                    lat_max = min(data['lat_max'] + adj_degrees, 90)
+                    if latitude >= lat_min and latitude <= lat_max:
+                        constellations.append(name)
+                        count += 1
+                return constellations
 
 
